@@ -32,6 +32,64 @@ a { color: var(--vurgu); text-decoration: none; }
 ::-webkit-scrollbar-track { background: var(--arka); }
 ::-webkit-scrollbar-thumb { background: var(--vurgu); border-radius: 2px; }
 
+.profil-foto-alani {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profil-cerceve {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 3px solid var(--vurgu);
+  box-shadow: 0 0 0 6px rgba(249,115,22,0.12),
+              0 0 40px rgba(249,115,22,0.2);
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.profil-cerceve:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 0 8px rgba(249,115,22,0.2),
+              0 0 60px rgba(249,115,22,0.3);
+}
+
+.profil-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.profil-durum {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--kart);
+  border: 1px solid var(--kenar);
+  border-radius: 50px;
+  padding: 0.4rem 1.1rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--vurgu);
+}
+
+.durum-noktasi {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--vurgu);
+  animation: nabiz 1.5s ease-in-out infinite;
+}
+
+@keyframes nabiz {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+
 
 #imlec {
 position: fixed; width: 12px; height: 12px; background: var(–vurgu);
@@ -189,9 +247,8 @@ nav { padding: 1rem 1.5rem; }
       <h1 class="ana-baslik">Abakar abdraman<span class="turuncu">Hissene</span></h1>
       <div class="daktilo-alani"><span id="daktilo-yazi"></span></div>
       <p class="aciklama-metin">
-       Bilgisayar programcılığı öğrencisiyim. HTML, CSS ve JavaScript kullanarak
-        kullanıcı dostu, modern web arayüzleri geliştiriyorum. Kod yazmayı bir sanat
-        olarak görüyorum.
+       Gümüşhane Üniversitesi Bilgisayar Programcılığıgi Bölümü ikinci sınıf öğrencisiyim. 
+       HTML, CSS ve JavaScript kullanarak modern ve kullanıcı dostu web arayüzleri geliştiriyorum.
       </p>
       <div class="bilgi-grid">
         <div class="bilgi-kutu"><div class="bilgi-ust">📍 Konum</div><div class="bilgi-deger">Gümüşhane,Türkiye</div></div>
@@ -205,11 +262,23 @@ nav { padding: 1rem 1.5rem; }
       </div>
     </div>
     <div class="istatistik-alani">
-      <div class="istatistik-kart"><div class="istatistik-sayi">6</div><div class="istatistik-yazi">Tamamlanan Proje</div></div>
-      <div class="istatistik-kart"><div class="istatistik-sayi mavi">3+</div><div class="istatistik-yazi">Öğrenilen Teknoloji</div></div>
-      <div class="istatistik-kart"><div class="istatistik-sayi">2+</div><div class="istatistik-yazi">Yıllık Deneyim</div></div>
+  <div class="profil-foto-alani">
+    <div class="profil-cerceve">
+      <img src="c:\Users\HP\Downloads\abakar.jpeg" alt="Profil Fotoğrafı" class="profil-foto"/>
+    </div>
+    <div class="profil-durum">
+      <span class="durum-noktasi"></span> Staja Açık
     </div>
   </div>
+  <div class="istatistik-kart">
+    <div class="istatistik-sayi">6</div>
+    <div class="istatistik-yazi">Tamamlanan Proje</div>
+  </div>
+  <div class="istatistik-kart">
+    <div class="istatistik-sayi mavi">3+</div>
+    <div class="istatistik-yazi">Öğrenilen Teknoloji</div>
+  </div>
+</div>
 </section>
 
 <div class="ayirici"></div>
